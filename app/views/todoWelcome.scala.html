@@ -1,0 +1,67 @@
+@(message: String)(totList: List[model.MyTodo])
+
+
+@displayAddFrom() = {
+  <div class="row">
+            <div class="col-sm-9">
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Add Task</label>
+                        <input type="email" class="form-control " id="exampleInputEmail1" placeholder="Add Task...">
+                        <button type="button" class="btn btn-primary">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+}
+
+@main("Welcome to Play") {
+
+   <!-- Main -->
+    <div class="container-fluid">
+       @displayAddFrom()
+        <br>
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Showing all the Todo Tasks (@totList.size) </div>
+                    <div class="panel-body">
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Title</th>
+                                    <th>Description</th>
+                                    <th>Created On</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            @if(totList.isEmpty){
+                            <tr><td colspan="3">No Todo Task.. please add one</td></tr>	
+                            }
+							@for(myToDo <- totList) {
+							<tr>
+                                    <th scope="row">@myToDo.id</th>
+                                    <td>@myToDo.title</td>
+                                    <td>@myToDo.desc</td>
+                                    <td>@myToDo.createdOn</td>
+                                </tr>
+                                 }
+                              
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Task :</div>
+                    <div class="panel-body">
+                        pp
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
