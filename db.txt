@@ -1,0 +1,25 @@
+CREATE DATABASE `todo` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+CREATE TABLE `mytodo` (
+  `idmytodo` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(45) DEFAULT NULL,
+  `mydesc` varchar(45) DEFAULT NULL,
+  `createdby` varchar(45) DEFAULT NULL,
+  `createdOn` datetime DEFAULT NULL,
+  `assignedTo` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idmytodo`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+
+
+
+INSERT INTO `todo`.`mytodo`
+(`idmytodo`,
+`title`,
+`mydesc`,
+`createdby`,
+`createdOn`,
+`assignedTo`)
+VALUES
+('ttile',
+'desc',
+)
